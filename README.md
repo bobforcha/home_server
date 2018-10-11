@@ -1,24 +1,3 @@
-# README
+# Bob's Home Server
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+A Rails app for hosting a central home server on a Raspberry Pi for home automation and information display. Features will be added as they are developed.
