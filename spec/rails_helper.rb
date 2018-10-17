@@ -60,4 +60,4 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 end
 
-Dir[Rails.root.join("spec/support/init/*.rb")].each { |f| require f }
+Dir.glob(Rails.root.join("spec/support/init/*.rb")).each { |f| require f }

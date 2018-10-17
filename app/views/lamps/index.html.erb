@@ -1,0 +1,12 @@
+<h1 class="text text-center">Lamps</h1>
+
+<% @lamps.each do |lamp| %>
+  <div class='panel'>
+    <div class="panel-heading">
+      <h3><%= lamp.name %></h3>
+    </div>
+    <div class="panel-body">
+      <p><%= lamp.status %></p>
+    </div>
+  </div>
+<% end %>
