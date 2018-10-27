@@ -1,0 +1,23 @@
+<h1>Add Lamp</h1>
+
+<%= form_for(@lamp) do |f| %>
+  <% if @lamp.errors.any? %>
+    <h2>
+      <%= pluralize(@lamp.errors.count, "error") %>
+      prohibited this lamp from being saved:
+    </h2>
+    <ul>
+      <% @lamp.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :ip_address, "IP Address" %>
+  <%= f.text_field :ip_address %>
+
+  <%= f.submit %>
+<% end %>
