@@ -1,0 +1,4 @@
+<h1>User Profile</h1>
+<p><bold>Name: </bold><%= current_user.name %></p>
+<p><bold>Email: </bold><%= current_user.email %></p>
+<p><bold>Role: </bold><%= current_user.admin ? "admin" : "guest" %></p>
