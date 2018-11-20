@@ -1,5 +1,8 @@
 RSpec.feature "Adding a new lamp", js: true do
+  let(:user) { User.create(name: "Test", email: "test@example.com", password: "password") }
   let(:lamp) { Lamp.new(name: "Test Lamp", ip_address: "1.1.1.1") }
+
+  before { sign_in user }
 
   scenario "with valid attributes" do
     visit root_path
