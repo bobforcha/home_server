@@ -1,5 +1,10 @@
 class LampsController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
+    unless current_user
+      redirect_to new_user_session_path
+    end
     @lamps = Lamp.all
   end
 
