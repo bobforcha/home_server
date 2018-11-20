@@ -1,14 +1,23 @@
 RSpec.feature "Signing in a User", js: true do
-  let(:test_user) { User.create(name: 'Bob', email: 'bob@example.com', password: 'password') }
+  let(:user) { User.create(name: "Test", email: "test@example.com", password: "password") }
+
+  before do
+    visit root_path
+  end
 
   scenario "with valid credentials" do
-    visit root_path
-    click_link "Sign in"
-    fill_in 'Email', with: test_user.email
-    fill_in "Password", with: test_user.password
+    fill_in "Email", with: user.email
+    fill_in "Password", with: user.password
     click_button "Log in"
 
-    expect(page).to have_content "Signed in successfully."
-    expect(page).to have_content "Lamps"
+    expect(page).to have_content("Signed in successfully")
+  end
+
+  scenario "without valid credentials" do
+    fill_in "Email", with: ""
+    fill_in "Password", with: ""
+    click_button "Log in"
+
+    expect(page).to have_content("Invalid Email or password.")
   end
 end
